@@ -10,46 +10,63 @@ body {
   @include flex(row, center, center);
   height: 100svh;
 }
-.card {
-  @include flex(column, space-between, "");
-  background: $background-color;
-  border-radius: 24px;
-  width: 326px;
-  border-bottom: 4px solid $button-color;
-  font-family: $font;
-  .image{
-    border-radius: 24px 24px 0 0;
-  }
-  .content-container{
-    @include flex(column, flex-start, flex-start);
-    padding: 32px 24px 32px 24px;
-    gap: 24px;
-    .card-text-container {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      .heading {
-        font-size: 24px;
+
+.cards-container{
+  @include flex(row, center, center);
+  gap: 48px;
+
+  .card {
+    @include flex(column, space-between, "");
+    background: $background-color;
+    border-radius: 24px;
+    width: 326px;
+    border-bottom: 4px solid $button-color;
+    font-family: $font;
+    .image{
+      border-radius: 24px 24px 0 0;
+    }
+    .content-container{
+      @include flex(column, flex-start, flex-start);
+      padding: 32px 24px 32px 24px;
+      gap: 24px;
+      .card-text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        .heading {
+          font-size: 24px;
+        }
+        .paragraph {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 27px;
+        }
       }
-      .paragraph {
+      .card-button {
+        @include flex(row, center, center);
+        background: $button-color;
         font-size: 18px;
-        font-weight: 400;
-        line-height: 27px;
+        border-radius: 8px;
+        width: 100%;
+        padding: 12px 8px 12px 8px;
+        color: $font-color;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          background: $button-color-hover;
+        }
       }
     }
-    .card-button {
-      @include flex(row, center, center);
-      background: $button-color;
-      font-size: 18px;
-      border-radius: 8px;
-      width: 100%;
-      padding: 12px 8px 12px 8px;
-      color: $font-color;
-      text-decoration: none;
-      cursor: pointer;
-      &:hover {
-        background: $button-color-hover;
-      }
-    }
+  }
+}
+
+@media screen and (max-width:1100px) {
+  body {
+  
+    height: 100%;
+  }
+  .cards-container{
+    @include flex(column, flex-start, flex-start);
+    margin: 25px 0;
   }
 }
