@@ -20,26 +20,35 @@ body {
   align-items: "";
   background: #FFFFFF;
   border-radius: 24px;
-  padding: 32px 24px 32px 24px;
   width: 326px;
   border-bottom: 4px solid #C4DBDB;
   font-family: Arial, sans-serif;
+}
+.card .image {
+  border-radius: 24px 24px 0 0;
+}
+.card .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 32px 24px 32px 24px;
   gap: 24px;
 }
-.card .card-text-container {
+.card .content-container .card-text-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.card .card-text-container .heading {
+.card .content-container .card-text-container .heading {
   font-size: 24px;
 }
-.card .card-text-container .paragraph {
+.card .content-container .card-text-container .paragraph {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-.card .card-button {
+.card .content-container .card-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -53,6 +62,6 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.card .card-button:hover {
+.card .content-container .card-button:hover {
   background: #94bdbd;
 }/*# sourceMappingURL=styles.css.map */
