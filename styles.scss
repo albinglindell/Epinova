@@ -6,67 +6,89 @@
   box-sizing: border-box;
 }
 body {
-  background: #e9ebef;
-  @include flex(row, center, center);
+  @include flex(column, center, center);
   height: 100svh;
+  background-color: $background-color;
 }
+.section-container {
+  @include flex(column, center, center);
+  background-color: $section-background-color;
+  height: 713px;
+  max-width: 1140px;
+  font-family: $font;
+  padding: 80px 64px 80px 64px;
+  gap: 64px;
+  .section-heading {
+    font-family: Arial;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 27px;
+    color: #146e6e;
+  }
+  .cards-container {
+    @include flex(row, center, center);
+    gap: 48px;
+    background-color: $section-background-color;
 
-.cards-container{
-  @include flex(row, center, center);
-  gap: 48px;
-
-  .card {
-    @include flex(column, space-between, "");
-    background: $background-color;
-    border-radius: 24px;
-    width: 326px;
-    border-bottom: 4px solid $button-color;
-    font-family: $font;
-    .image{
-      border-radius: 24px 24px 0 0;
-    }
-    .content-container{
-      @include flex(column, flex-start, flex-start);
-      padding: 32px 24px 32px 24px;
-      gap: 24px;
-      .card-text-container {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        .heading {
-          font-size: 24px;
+    .card {
+      @include flex(column, space-between, flex-start);
+      background: $card-background-color;
+      border-radius: 0 24px 0 24px;
+      width: 326px;
+      border-bottom: 4px solid $button-color;
+      .image {
+        border-radius: 0 24px 0 0;
+      }
+      .content-container {
+        @include flex(column, flex-start, flex-start);
+        padding: 32px 24px 32px 24px;
+        gap: 24px;
+        .card-text-container {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .heading {
+            font-size: 24px;
+          }
+          .paragraph {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 27px;
+          }
         }
-        .paragraph {
+        .card-button {
+          @include flex(row, center, center);
+          background: $button-color;
           font-size: 18px;
-          font-weight: 400;
-          line-height: 27px;
-        }
-      }
-      .card-button {
-        @include flex(row, center, center);
-        background: $button-color;
-        font-size: 18px;
-        border-radius: 8px;
-        width: 100%;
-        padding: 12px 8px 12px 8px;
-        color: $font-color;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-          background: $button-color-hover;
+          border-radius: 8px;
+          width: 100%;
+          padding: 12px 8px 12px 8px;
+          color: $font-color;
+          text-decoration: none;
+          cursor: pointer;
+          &:hover {
+            background: $button-color-hover;
+          }
         }
       }
     }
   }
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width: 1100px) {
   body {
-  
     height: 100%;
-  }
-  .cards-container{
-    @include flex(column, flex-start, flex-start);
-    margin: 25px 0;
+
+    .section-container {
+      height: 100%;
+      @include flex(column, center, center);
+      .section-heading {
+        font-size: 25px;
+      }
+      .cards-container {
+        @include flex(column, flex-start, flex-start);
+        margin: 25px 0;
+      }
+    }
   }
 }

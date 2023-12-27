@@ -5,36 +5,55 @@
 }
 
 body {
-  background: #e9ebef;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100svh;
+  background-color: #E9EBEF;
 }
 
-.cards-container {
+.section-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F5;
+  height: 713px;
+  max-width: 1140px;
+  font-family: Arial, sans-serif;
+  padding: 80px 64px 80px 64px;
+  gap: 64px;
+}
+.section-container .section-heading {
+  font-family: Arial;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 27px;
+  color: #146e6e;
+}
+.section-container .cards-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 48px;
+  background-color: #F5F5F5;
 }
-.cards-container .card {
+.section-container .cards-container .card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: "";
+  align-items: flex-start;
   background: #FFFFFF;
-  border-radius: 24px;
+  border-radius: 0 24px 0 24px;
   width: 326px;
   border-bottom: 4px solid #C4DBDB;
-  font-family: Arial, sans-serif;
 }
-.cards-container .card .image {
-  border-radius: 24px 24px 0 0;
+.section-container .cards-container .card .image {
+  border-radius: 0 24px 0 0;
 }
-.cards-container .card .content-container {
+.section-container .cards-container .card .content-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,20 +61,20 @@ body {
   padding: 32px 24px 32px 24px;
   gap: 24px;
 }
-.cards-container .card .content-container .card-text-container {
+.section-container .cards-container .card .content-container .card-text-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
-.cards-container .card .content-container .card-text-container .heading {
+.section-container .cards-container .card .content-container .card-text-container .heading {
   font-size: 24px;
 }
-.cards-container .card .content-container .card-text-container .paragraph {
+.section-container .cards-container .card .content-container .card-text-container .paragraph {
   font-size: 18px;
   font-weight: 400;
   line-height: 27px;
 }
-.cards-container .card .content-container .card-button {
+.section-container .cards-container .card .content-container .card-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -69,7 +88,7 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
-.cards-container .card .content-container .card-button:hover {
+.section-container .cards-container .card .content-container .card-button:hover {
   background: #94bdbd;
 }
 
@@ -77,7 +96,17 @@ body {
   body {
     height: 100%;
   }
-  .cards-container {
+  body .section-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body .section-container .section-heading {
+    font-size: 25px;
+  }
+  body .section-container .cards-container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
